@@ -6,4 +6,4 @@ before_install:
   - docker build -t testluyi -f Dockerfile.dev .
 
 script:
-  - docker run testluyi npm run test -- --coverage
+  - docker run -e CI=true testluyi npm run test -- --coverage
