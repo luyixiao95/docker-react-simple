@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t TESTLUYI -f Dockerfile.dev .
+
+script:
+  - docker run TESTLUYI npm run test -- --coverage
